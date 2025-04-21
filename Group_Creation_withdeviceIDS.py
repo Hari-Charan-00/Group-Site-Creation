@@ -2,9 +2,9 @@ import requests
 import json
 import pandas as pd  # For reading the Excel file
 
-BaseUrl = "https://netenrich.opsramp.com/"
-key = "cHrCgP3TWVtv3EwMzah3hfjH34eXUHM8"
-secret = "c55PPRzMPg3BWp5tXZMwwT8Gzpq6GmUbBwWnAfdhJZjmVHfXB59ZMM5rZY3kA5wf"
+BaseUrl = ""
+key = ""
+secret = ""
 
 # Function to generate the token
 def token_generation():
@@ -38,8 +38,8 @@ def groupcreation(access_token, clientID, device_uuids):
         search_query = "uuid IN ( " + " , ".join([f'\"{uuid}\"' for uuid in device_uuids]) + " )"
         
         payload = json.dumps([{
-            "name": "UD_Group",
-            "id" : "DGP-a9be3a6f-d213-4ebb-ac79-08b0bfde66fa",
+            "name": "",
+            "id" : "",
             "entityType": "DEVICE_GROUP",
             "filterCriteria": {
                 "matchType": "ALL",
