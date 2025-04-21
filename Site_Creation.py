@@ -5,9 +5,9 @@ import pandas as pd
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-BaseUrl = "https://netenrich.opsramp.com/"
-OpsRampSecret = 'c55PPRzMPg3BWp5tXZMwwT8Gzpq6GmUbBwWnAfdhJZjmVHfXB59ZMM5rZY3kA5wf'  # Replace with your OpsRamp Secret
-OpsRampKey = 'cHrCgP3TWVtv3EwMzah3hfjH34eXUHM8'  # Replace with your OpsRamp Key
+BaseUrl = ""
+OpsRampSecret = ''  # Replace with your OpsRamp Secret
+OpsRampKey = ''  # Replace with your OpsRamp Key
 
 def create_site(data):
     token_url = BaseUrl + "auth/oauth/token"
@@ -40,7 +40,7 @@ def create_site(data):
                 print(f"Failed to create site. Status code: {response.status_code}, Response: {response.text}")
 
 # Specify the correct path to your Excel file
-excel_path = 'C:\\Users\\hari.boddu\\Downloads\\Site_creation.xlsx'
+excel_path = 'Site_creation.xlsx'
 df = pd.read_excel(excel_path)
 
 # Iterate through rows and call create_site function
