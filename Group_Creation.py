@@ -5,9 +5,9 @@ import pandas as pd
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-BaseUrl = "https://netenrich.opsramp.com/"
-OpsRampSecret = 'c55PPRzMPg3BWp5tXZMwwT8Gzpq6GmUbBwWnAfdhJZjmVHfXB59ZMM5rZY3kA5wf'  # Replace with your OpsRamp Secret
-OpsRampKey = 'cHrCgP3TWVtv3EwMzah3hfjH34eXUHM8'  # Replace with your OpsRamp Key
+BaseUrl = ""
+OpsRampSecret = ''  # Replace with your OpsRamp Secret
+OpsRampKey = ''  # Replace with your OpsRamp Key
 
 def create_group(data):
     token_url = BaseUrl + "auth/oauth/token"
@@ -40,9 +40,9 @@ def create_group(data):
                 print(f"Failed to create Group. Status code: {response.status_code}, Response: {response.text}")
 
 # Specify the correct path to your Excel file
-excel_path = 'C:\\Users\\hari.boddu\\Downloads\\Group_creation.xlsx'
+excel_path = 'Group_creation.xlsx'
 df = pd.read_excel(excel_path)
 
-# Iterate through rows and call create_group function
+# Iterate through rows and call the create_group function
 for index, row in df.iterrows():
     create_group(row.to_dict())
